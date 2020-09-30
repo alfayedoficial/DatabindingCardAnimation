@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	 xmlns:app="http://schemas.android.com/apk/res-auto"
+	 xmlns:tools="http://schemas.android.com/tools">
+
+	 <data>
+
+		  <variable
+			   name="activity"
+			   type="com.promoclick.databindingcard.CardActivity" />
+	 </data>
+
+	 <ScrollView
+		  android:layout_width="match_parent"
+		  android:layout_height="match_parent"
+		  tools:context=".CardActivity">
+
+
+		  <androidx.constraintlayout.widget.ConstraintLayout
+			   android:id="@+id/lyParent"
+			   android:layout_width="match_parent"
+			   android:layout_height="wrap_content">
+
+			   <FrameLayout
+					android:id="@+id/cardViewContainer"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:onClick="@{()->activity.takeFocus()}"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+
+			   <LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="30dp"
+					android:onClick="@{()->activity.takeFocus()}"
+					android:orientation="vertical"
+					app:layout_constraintBottom_toBottomOf="parent"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toBottomOf="@+id/cardViewContainer">
+
+					<androidx.cardview.widget.CardView
+						 style="@style/CardStyle"
+						 android:elevation="4dp"
+						 app:cardCornerRadius="2dp">
+
+						 <LinearLayout
+							  android:layout_width="match_parent"
+							  android:layout_height="wrap_content"
+							  android:orientation="vertical">
+
+							  <TextView
+								   style="@style/CardLabel"
+								   android:onClick="@{()->activity.takeFocus()}"
+								   android:text="@string/card_number" />
+
+							  <com.promoclick.databindingcard.utils.CreditCardEditText
+								   android:id="@+id/et_number"
+								   style="@style/CardInput"
+								   android:hint="Card Number"
+								   android:inputType="number"
+								   android:maxLength="19" />
+
+						 </LinearLayout>
+
+					</androidx.cardview.widget.CardView>
+
+					<androidx.cardview.widget.CardView
+						 style="@style/CardStyle"
+						 android:elevation="4dp"
+						 app:cardCornerRadius="2dp">
+
+						 <LinearLayout
+							  android:layout_width="match_parent"
+							  android:layout_height="wrap_content"
+							  android:orientation="vertical">
+
+							  <TextView
+								   style="@style/CardLabel"
+								   android:onClick="@{()->activity.takeFocus()}"
+								   android:text="@string/card_holders_name" />
+
+							  <com.promoclick.databindingcard.utils.CreditCardEditText
+								   android:id="@+id/et_name"
+								   style="@style/CardInput"
+								   android:hint="Name on card"
+								   android:inputType="text|textCapCharacters"
+								   android:maxLength="22"
+								   android:privateImeOptions="nm"
+								   android:textAllCaps="true" />
+
+						 </LinearLayout>
+
+					</androidx.cardview.widget.CardView>
+
+					<androidx.cardview.widget.CardView
+						 style="@style/CardStyle"
+						 android:elevation="4dp"
+						 app:cardCornerRadius="2dp">
+
+						 <LinearLayout
+							  android:layout_width="match_parent"
+							  android:layout_height="wrap_content"
+							  android:orientation="vertical">
+
+							  <TextView
+								   style="@style/CardLabel"
+								   android:onClick="@{()->activity.takeFocus()}"
+								   android:text="@string/card_validity" />
+
+							  <com.promoclick.databindingcard.utils.CreditCardEditText
+								   android:id="@+id/et_validity"
+								   style="@style/CardInput"
+								   android:hint="Expiry Date"
+								   android:inputType="number"
+								   android:maxLength="5" />
+
+						 </LinearLayout>
+
+					</androidx.cardview.widget.CardView>
+
+					<androidx.cardview.widget.CardView
+						 style="@style/CardStyle"
+						 android:layout_marginBottom="100dp"
+						 android:elevation="4dp"
+						 app:cardCornerRadius="2dp">
+
+						 <LinearLayout
+							  android:layout_width="match_parent"
+							  android:layout_height="wrap_content"
+							  android:orientation="vertical">
+
+							  <TextView
+								   style="@style/CardLabel"
+								   android:onClick="@{()->activity.takeFocus()}"
+								   android:text="@string/card_cvv" />
+
+							  <com.promoclick.databindingcard.utils.CreditCardEditText
+								   android:id="@+id/et_cvv"
+								   style="@style/CardInput"
+								   android:hint="CVV/CVC"
+								   android:inputType="number"
+								   android:maxLength="3" />
+
+						 </LinearLayout>
+
+					</androidx.cardview.widget.CardView>
+
+					<Button
+						 android:id="@+id/btnSubmitPayment"
+						 android:layout_width="match_parent"
+						 android:layout_height="wrap_content"
+						 android:onClick="@{()->activity.btnNext()}"
+						 android:text="Next" />
+
+			   </LinearLayout>
+
+		  </androidx.constraintlayout.widget.ConstraintLayout>
+
+	 </ScrollView>
+</layout>
