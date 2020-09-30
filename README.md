@@ -1,4 +1,7 @@
 # DatabindingCardAnimation
+[ ![Download](https://github.com/alfayedoficial/DatabindingCardAnimation/blob/master/release.SVG) ](1.0)
+![Build Status](https://travis-ci.org/simplifycom/simplify-android-sdk.svg?branch=master)
+
 
 Credit card animation native android java
 Task of #HeartAttack restaurant App
