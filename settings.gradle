@@ -1,2 +1,3 @@
+include ':gateway-android'
 include ':app'
 rootProject.name = "DatabindingCard"

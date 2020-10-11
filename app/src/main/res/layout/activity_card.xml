@@ -60,6 +60,7 @@
 								   android:id="@+id/et_number"
 								   style="@style/CardInput"
 								   android:hint="Card Number"
+								   android:text="5123450000000008"
 								   android:inputType="number"
 								   android:maxLength="19" />
 
@@ -86,6 +87,7 @@
 								   android:id="@+id/et_name"
 								   style="@style/CardInput"
 								   android:hint="Name on card"
+								   android:text="Test MasterCard"
 								   android:inputType="text|textCapCharacters"
 								   android:maxLength="22"
 								   android:privateImeOptions="nm"
@@ -160,4 +162,5 @@
 		  </androidx.constraintlayout.widget.ConstraintLayout>
 
 	 </ScrollView>
+
 </layout>
